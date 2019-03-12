@@ -7,15 +7,18 @@ import CardForm from "./CardForm"
 class App extends Component {
   state = {
     cards: [
-      {id: 1, front: "2 + 2", back: "4", frontShown: true, },
-      {id: 2, front: "2 + 3", back: "5", frontShown: true, },
-      {id: 3, front: "2 + 4", back: "6", frontShown: true, },
-      {id: 4, front: "2 + 5", back: "7", frontShown: true, },
-      {id: 5, front: "2 + 6", back: "8", frontShown: true, },
-      {id: 6, front: "2 + 7", back: "9", frontShown: true, },
+      {id: 1, front: "2 + 2", back: "4",  },
+      {id: 2, front: "2 + 3", back: "5",  },
+      {id: 3, front: "2 + 4", back: "6",  },
+      {id: 4, front: "2 + 5", back: "7",  },
+      {id: 5, front: "2 + 6", back: "8",  },
+      {id: 6, front: "2 + 7", back: "9",  },
     ],
     showForm: true,
+    frontShown: true,
     }
+
+  toggleCard = () => this.setState({ frontShown: !this.state.frontShown });
 
   toggleForm = () => this.setState({ showForm: !this.state.showForm, });
 
@@ -49,7 +52,7 @@ class App extends Component {
        : null }
        </Segment>
        <br />
-       <Cards cards={this.state.cards} remove={this.removeCard} />
+       <Cards cards={this.state.cards} remove={this.removeCard} showBack={this.toggleCard} frontShown={this.state.frontShown}/>
       </Container>
     );
   }
