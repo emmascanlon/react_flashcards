@@ -14,11 +14,11 @@ class App extends Component {
       {id: 5, front: "2 + 6", back: "8",  },
       {id: 6, front: "2 + 7", back: "9",  },
     ],
-    showForm: true,
+    showForm: false,
     frontShown: true,
     }
 
-  toggleCard = () => this.setState({ frontShown: !this.state.frontShown });
+  
 
   toggleForm = () => this.setState({ showForm: !this.state.showForm, });
 
@@ -46,13 +46,13 @@ class App extends Component {
        <br />
        <Segment basic>
        <Button icon color="blue" onClick={this.toggleForm}>
-       <Icon name='angle double down' />
+      <Icon name={this.state.showForm ? "double angle up" : "double angle down"} />
        </Button>
-       { this.state.showForm? <CardForm add={this.addCard} />
+       { this.state.showForm ? <CardForm add={this.addCard} />
        : null }
        </Segment>
        <br />
-       <Cards cards={this.state.cards} remove={this.removeCard} showBack={this.toggleCard} frontShown={this.state.frontShown}/>
+       <Cards cards={this.state.cards} remove={this.removeCard}/>
       </Container>
     );
   }

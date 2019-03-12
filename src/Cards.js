@@ -2,11 +2,11 @@ import React from "react";
 import Card from "./Card";
 
 
-const Cards = ({ cards, remove, showBack, frontShown, }) => (
+const Cards = ({ cards, remove, }) => (
   <div>
   {
     cards.map( card => (
-      <Card key={card.id} {...card} remove={remove} showBack={showBack} frontShown={frontShown}/>
+      <Card key={card.id} {...card} remove={remove} />
     ))
   }
   </div>
