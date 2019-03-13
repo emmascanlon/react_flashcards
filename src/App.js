@@ -15,7 +15,7 @@ class App extends Component {
       {id: 6, front: "2 + 7", back: "9",  },
     ],
     showForm: false,
-    frontShown: true,
+
     }
 
   
