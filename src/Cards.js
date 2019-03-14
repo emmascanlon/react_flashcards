@@ -1,15 +1,18 @@
 import React from "react";
 import Card from "./Card";
+import {Grid, } from "semantic-ui-react"
 
 
 const Cards = ({ cards, remove, }) => (
-  <div>
+  <Grid columns={3} divided>
+      <Grid.Row>
   {
     cards.map( card => (
       <Card key={card.id} {...card} remove={remove} />
     ))
   }
-  </div>
+  </Grid.Row>
+  </Grid>
 )
 
 

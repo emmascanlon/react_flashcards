@@ -1,6 +1,29 @@
 * {
   margin-top: 10px;
 }
+
+
+.count {
+  display: inline-block;
+  font-size: 24px;
+}
+
+#center {
+  font-size: 24px;
+  color: black;
+}
+
+#correct {
+  color: rgb(88,41,187);
+  font-size: 24px;
+}
+
+  #wrong {
+    color: rgb(242,98,2);
+    font-size: 24px;
+  }
+
+
 body {
   margin: 0;
   padding: 0;
